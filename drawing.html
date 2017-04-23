@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Canvas</title>
+  <style>
+  h1 {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  }
+  .dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    background-color: red;
+    position: absolute;
+  }
+  </style>
+</head>
+<body>
+  <h1>A simple drawing program</h1>
+  <div class="canvas" width="600" height="400">
+  </div>
+  <script>
+    addEventListener('mousemove', function(event){
+      var dot = document.createElement('dot');
+      dot.className = 'dot';
+      dot.style.left = (event.pageX - 4) + 'px';
+      dot.style.top = (event.pageY - 4) + 'px';
+      document.querySelector('.canvas').appendChild(dot);
+    })
+  </script>
+</body>
+</html>
